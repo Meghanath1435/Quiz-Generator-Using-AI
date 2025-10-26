@@ -1,53 +1,67 @@
-# AI Quiz Generator
+## Quiz Generator Using AI
 
-Uses OpenAI's ChatGPT API to generate multiple choice quiz with user defined language, topic, and difficulty.
+A fun, interactive quiz generator that uses **OpenAI’s GPT API** to instantly create multiple-choice quizzes based on any topic, difficulty, and language you choose.
 
-Features a loading screen with random facts to give the user something to do while the data is retrieved from the API and an ending screen with score-determined gifs and sarcastic messages.
+This project blends AI, web design, and playful UX — complete with animations, music, and cheeky score screens.
 
-[View Live App](https://ai-quiz-generator-next.vercel.app/)
+---
 
-![home page](./docs/images/home-page.jpg)
+### Features
 
-## Features
-- Customisable language, topic, difficulty, and number of questions
-- Loading screen that displays the live response stream and random webdev/programming facts (gives you something to do as it can take around 20-30 seconds for the quiz to generate)
-- Multiple choice Ed-style quiz with explanations and a progress bar
-- End screen with gifs, sarcastic messages, and confetti (>= 80%) that adapt to your quiz score
-- 14 track kahoot-flavored audio player (this is the real highlight, the quiz is just something to do while you're groovin :grin:)
+* Choose your **language, topic, difficulty**, and number of questions
+* Live **loading screen** with random coding facts while the quiz generates
+* Clean **multiple-choice interface** with progress tracking
+* Dynamic **results page** with custom messages, confetti, and gifs based on your score
+* **Built-in audio player** with a set of upbeat tracks to keep it engaging
 
-## Tech Used
+---
 
-- Next.js 13.4 (using the new App router)
-- Tailwind CSS
-- OpenAI's `gpt-3-turbo` API
+### Tech Stack
 
-## Packages Used
-- [framer-motion](https://www.framer.com/motion/) (for animations)
-- [highlight.js](https://www.npmjs.com/package/highlight.js) (for syntax highlighting)
-- [react-confetti](https://www.npmjs.com/package/react-confetti)
-- [react-loader-spinner](https://www.npmjs.com/package/react-loader-spinner)
-- [react-icons](https://react-icons.github.io/react-icons/)
-- [react-use](https://github.com/streamich/react-use) (for the `useAudio()` hook)
-- [react-simple-typewriter](https://www.npmjs.com/package/react-simple-typewriter)
+* **Next.js 13.4** (App Router)
+* **Tailwind CSS**
+* **OpenAI GPT API**
+* **Framer Motion** (animations)
+* **React Confetti**
+* **React Loader Spinner**
+* **React Simple Typewriter**
+* **React Icons**
 
-## Tools ##
-- `create-next-app` (development and building)
-- Vercel (deployment)
+---
 
-## OpenAI Integration
+### How It Works
 
-A custom prompt is created by interpolating user entered form data. Crucially, the response is asked to be returned in JSON format. Light "prompt engineering" was required to ensure the response was consistently in the correct format (for example: explicitly saying what the names of the keys should be).
+1. The user enters quiz settings (topic, difficulty, etc.).
+2. A **custom GPT prompt** is generated and sent to the API.
+3. The AI returns a structured JSON of questions, answers, and explanations.
+4. The app displays a fully functional quiz with smooth transitions and feedback.
 
-![prompt](./docs/images/prompt.jpg)
+---
 
-The API is queried. After playing with the available parameters, I found leaving most of them at their default setting worked well.
+### Getting Started
 
-![api request](./docs/images/api-request.jpg)
+```bash
+git clone https://github.com/Meghanath1435/Quiz-Generator-Using-AI.git
+cd Quiz-Generator-Using-AI
+npm install
+npm run dev
+```
 
-## Screenshots
+Create a `.env.local` file with your OpenAI key:
 
-![loading screen](./docs/images/loading-screen.jpg)
+```bash
+OPENAI_API_KEY=your_api_key_here
+```
 
-![quiz screen](./docs/images/quiz-screen.jpg)
+Then visit:
 
-![end-screen](./docs/images/end-screen.jpg)
+```
+http://localhost:3000
+```
+
+---
+
+###  Why I Built This
+
+I wanted to combine AI’s creative generation power with an engaging, gamified experience. It’s part of my learning journey with **Next.js**, **APIs**, and **frontend interaction design**.
+
